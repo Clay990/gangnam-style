@@ -84,13 +84,6 @@ This model aims to **cover API costs** for premium AI while maintaining a valuab
 
 ---
 
-## 🚀 Getting Started
-
-### 1. Clone the Repository
-```bash
-git clone https://your-repo-url/gangnam-style.git
-cd gangnam-style
-
 ---
 
 ### 💬 Review & Suggestions
@@ -108,3 +101,11 @@ cd gangnam-style
 4. Add a small **Architecture Diagram** (maybe later with mermaid or a PNG).
 
 Would you like me to make a **GitHub-ready README.md file (downloadable)** version with a professional layout (badges, image placeholders, code block formatting, etc.)?
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+```bash
+git clone https://your-repo-url/gangnam-style.git
+cd gangnam-style
+
