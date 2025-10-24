@@ -292,7 +292,7 @@ export default function HomePage() {
 
       <div className="relative w-full max-w-3xl h-[90vh] md:h-[600px] rounded-2xl shadow-xl border border-red-600 z-10">
         <div className="relative z-10 flex flex-col h-full bg-gray-900 rounded-2xl p-4 sm:p-6">
-          <ShinyText text="Hybrid AI Hub" disabled={false} speed={3} className='text-3xl md:text-4xl font-bold text-center mb-4 md:mb-6 drop-shadow-lg' />
+          <ShinyText text="Shadow AI Hub" disabled={false} speed={3} className='text-3xl md:text-4xl font-bold text-center mb-4 md:mb-6 drop-shadow-lg' />
           <ChatHistory chatHistory={chatHistory} isChatLoading={isChatLoading} />
           <ModelSelector selectedModel={selectedModel} setSelectedModel={setSelectedModel} isChatLoading={isChatLoading} />
           <ChatInput input={input} setInput={setInput} handleSend={handleSend} isChatLoading={isChatLoading} user={user} />
