@@ -2,33 +2,37 @@ import admin from 'firebase-admin';
 import { getAuth } from 'firebase-admin/auth';
 import { getFirestore } from 'firebase-admin/firestore';
 
-// Read the secret service account key from the environment variable
-const serviceAccountString = process.env.FIREBASE_ADMIN_CONFIG;
+const serviceAccountJSON = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
 
-if (!serviceAccountString) {
-  throw new Error('FIREBASE_ADMIN_CONFIG environment variable is not set.');
+if (!serviceAccountJSON) {
+  throw new Error('The FIREBASE_SERVICE_ACCOUNT_JSON environment variable is not set. Please follow the instructions to update your .env.local file.');
 }
 
-// Parse the JSON string into an object
-let serviceAccount: admin.ServiceAccount;
+let serviceAccount;
 try {
-  serviceAccount = JSON.parse(serviceAccountString);
+  serviceAccount = JSON.parse(serviceAccountJSON);
 } catch (error: any) {
-  console.error("Failed to parse FIREBASE_ADMIN_CONFIG:", error.message);
-  throw new Error('FIREBASE_ADMIN_CONFIG is not a valid JSON string.');
+  throw new Error(`Failed to parse FIREBASE_SERVICE_ACCOUNT_JSON: ${error.message}`);
 }
 
 // Initialize the Firebase Admin SDK
-// We check if it's already initialized to prevent errors during hot-reloading in development
 if (!admin.apps.length) {
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-  });
+  try {
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount),
+    });
+    console.log("Firebase Admin SDK initialized successfully."); 
+  } catch (error: any) {
+    console.error("Firebase Admin SDK initialization error:", error.message);
+  
+    throw new Error(`Firebase Admin SDK initialization failed: ${error.message}`);
+  }
+} else {
+  console.log("Firebase Admin SDK already initialized."); 
 }
 
-// Export the admin auth and firestore instances
+
 const adminAuth = getAuth();
 const adminDb = getFirestore();
 
 export { adminAuth, adminDb };
-

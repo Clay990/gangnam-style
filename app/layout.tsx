@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Script from "next/script"; // <-- 1. Make sure this import is here
+import Script from "next/script"; 
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* --- 2. This Script tag is ESSENTIAL for login --- */}
+    
         <Script src="https://accounts.google.com/gsi/client" async defer />
       </head>
       <body className={inter.className}>{children}</body>

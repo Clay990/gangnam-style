@@ -6,21 +6,21 @@
 @tailwind components;
 @tailwind utilities;
 
-/* --- Custom Scrollbar Styles --- */
+
 ::-webkit-scrollbar {
-  width: 8px; /* Set the width of the scrollbar */
+  width: 8px; 
 }
 
 ::-webkit-scrollbar-track {
-  background: #1f2937; /* Dark track, matches bg-gray-800 */
+  background: #1f2937; 
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #dc2626; /* Red thumb, matches bg-red-600 */
+  background: #dc2626; 
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ef4444; /* Brighter red on hover, matches bg-red-500 */
+  background: #ef4444; 
 }
