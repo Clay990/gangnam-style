@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🕺 Gangnam Style
 
-## Getting Started
+Welcome to **Gangnam Style**, a modern, responsive web application demonstrating a **hybrid monetization model** for accessing powerful AI chat capabilities. Users can interact with different AI models based on a **flexible credit system**.
 
-First, run the development server:
+---
 
+## 🌐 Overview
+
+**Gangnam Style** provides a sleek chat interface allowing users to leverage AI for various tasks.  
+It integrates **Google's Gemini models (Flash and Pro)** and employs a **credit-based system** to manage access to premium features, funded through Stripe payments.
+
+---
+
+## ✨ Key Features (Implemented)
+
+### 💬 Responsive Chat UI
+- Modern, dark-themed interface optimized for desktop and mobile.  
+- Includes an **Aurora background effect**.
+
+### 🧠 Hybrid AI Model Access
+- **Flash Tier (Free):** Access to Google's efficient *Gemini Flash* model.  
+- **Pro Tier (Credit-Based):** Access to the more powerful *Gemini Pro* model, consuming **AI Boost Credits**.
+
+### ⚡ AI Boost Credits System
+- Users receive **100 starter credits** upon signing up.  
+- Real-time credit balance displayed in the UI.  
+- Pro model usage automatically deducts credits.
+
+### 🔐 Secure Authentication
+- Seamless sign-in/sign-up using **Google One Tap**.  
+- Fallback **“Sign in with Google”** button for manual login.  
+- Managed securely via **Firebase Authentication**.
+
+### 💳 Credit Purchases via Stripe
+- Integrated **Stripe Checkout** for purchasing credit packs (currently 100 credits).  
+- Secure **webhook endpoint** verifies payments and updates user credits in **Firestore**.  
+- Real-time credit updates reflected in the UI.
+
+### 🗃️ Real-time Database
+- User credits managed in **Firestore** and updated live.
+
+### 🧾 Markdown Rendering
+- AI responses formatted using **react-markdown**.
+
+### ⏳ Loading States
+- Includes an initial “**AI is future**” typing animation.  
+- Loading indicators for chat responses and credit transactions.
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Technology |
+|-----------|-------------|
+| **Framework** | Next.js 14+ (App Router) |
+| **Language** | TypeScript |
+| **Styling** | Tailwind CSS (custom scrollbar) |
+| **Authentication** | Firebase Authentication (Google Provider) |
+| **Database** | Firestore |
+| **Backend** | Next.js API Routes, Firebase Admin SDK |
+| **AI** | Google Gemini API (1.5 Flash, 1.5 Pro) |
+| **Payments** | Stripe (Checkout & Webhooks) |
+| **UI Components** | react-markdown, Custom ShinyText, Aurora |
+
+---
+
+## 💰 Monetization Model
+
+Gangnam Style operates on a **freemium hybrid model**:
+
+- **Free Access:**  
+  Users chat with *Gemini Flash* (low-cost model).  
+  *(Future: supported by display ads)*
+
+- **Premium Access:**  
+  Uses *Gemini Pro*, requiring **AI Boost Credits**.
+
+### 🪙 Earning / Buying Credits
+- New users get **100 free credits**.  
+- Additional credits purchasable via **Stripe**.  
+- *(Future)*: Users can **earn credits by watching ads**.
+
+This model aims to **cover API costs** for premium AI while maintaining a valuable free tier.
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://your-repo-url/gangnam-style.git
+cd gangnam-style
