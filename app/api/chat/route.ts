@@ -7,7 +7,7 @@ import { adminAuth, adminDb } from '../../firebase/adminConfig';
 const COST_PER_PRO_QUERY = 1;
 const STARTER_CREDITS = 10;
 
-const PRO_MODEL_NAME = "gemini-2.0-flash"; 
+const PRO_MODEL_NAME = "gemini-2.5-flash"; 
 const FLASH_MODEL_NAME = "gemma-3n-e2b-it"; 
 
 

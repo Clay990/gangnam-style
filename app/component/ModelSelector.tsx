@@ -21,7 +21,7 @@ const ModelSelector: React.FC<ModelSelectorProps> = ({ selectedModel, setSelecte
             : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
         }`}
       >
-        Flash (Free)
+        Gamma (Free)
       </button>
       <button
         onClick={() => setSelectedModel('pro')}
@@ -32,7 +32,7 @@ const ModelSelector: React.FC<ModelSelectorProps> = ({ selectedModel, setSelecte
             : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
         }`}
       >
-        Pro (1 Credit)
+        Gemini 2.5 Pro (1 Credit)
       </button>
     </div>
   );
