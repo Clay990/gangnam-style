@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { User } from 'firebase/auth';
 
@@ -20,10 +20,24 @@ interface UserProfileProps {
 
 const UserProfile: React.FC<UserProfileProps> = ({ user, handleLogout, handleGoogleSignIn }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="absolute top-4 right-4 z-20">
-      <div className="relative">
+      <div className="relative" ref={menuRef}>
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="rounded-full overflow-hidden border-2 border-red-600 hover:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-600"
